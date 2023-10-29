@@ -1,4 +1,4 @@
-﻿class Modeling {
+class Modeling {
 
 
 
@@ -35,10 +35,33 @@
 		else return i + Recursion3(i - 1);
 	}
 
+	int Recursion4(int i) {
+
+		
+		int Fact(int f) {
+			if (f > 1) {
+				return f * Fact(f - 1);
+			}
+			else return 1; 
+		}
+
+		return Fact(i) / (Fact(2) * Fact(i - 2));
+
+	}
+
+	double Recursion5(double x, int n) {
+		if (n > 1) {
+			return x * Recursion5(x, n - 1);
+		}
+		else return x;
+	}
+
 	static public void Main(){
 		string first = "tiger";
 		int[] second = new int[] {1, 2, 3, 4};
 		int third = Convert.ToInt32(Console.ReadLine());
+		int fourth = Convert.ToInt32(Console.ReadLine());
+
 
 		var model = new Modeling();
 
@@ -49,6 +72,12 @@
 		Console.WriteLine();
 
 		Console.WriteLine(model.Recursion3(third));
+		Console.WriteLine();
+		
+		Console.WriteLine(model.Recursion4(fourth));
+		Console.WriteLine();
+
+		Console.WriteLine(model.Recursion5(5.3, 2));
 		Console.WriteLine();
 	}
 
